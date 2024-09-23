@@ -145,118 +145,142 @@
         </div>
     </section>
     
-    <section id="list" class="mx-auto p-6 text-center rounded-lg max-w-4xl">
-        <h2 class="text-4xl font-bold pb-7 leading-tight text-white">Átirányított szolgáltatások</h2>
+<section id="list" class="mx-auto p-6 text-center rounded-lg max-w-4xl">
+    <h2 class="text-4xl font-bold pb-7 leading-tight text-white">Átirányított szolgáltatások</h2>
     
-        <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
-            <div class="flex items-center justify-between"> <!-- Use justify-between to space items -->
-                <div class="flex items-center space-x-4">
-                    <div class="w-16 h-16 flex-shrink-0">
-                        <img src="/images/services/cloudflare.webp" alt="cloudflare logo" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <div class="text-white">
-                        <h3 class="text-xl font-semibold">CloudFlare</h3>
-                    </div>
+    <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 flex-shrink-0">
+                    <img src="/images/services/cloudflare.webp" alt="cloudflare logo" class="w-full h-full object-cover rounded-full">
                 </div>
-                <button onclick="window.location.href = '/ips/cloudflare.txt'" class="p-2 text-gray-400 hover:text-white focus:outline-none" title="CloudFlare IP címek">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-        
-        <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <div class="w-16 h-16 flex-shrink-0">
-                        <img src="/images/services/gcore.webp" alt="Service Logo" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <div class="text-white">
-                        <h3 class="text-xl font-semibold">Gcore Netherlands</h3>
-                    </div>
+                <div class="text-white">
+                    <h3 class="text-xl font-semibold">CloudFlare</h3>
                 </div>
-                <button onclick="window.location.href = '/ips/gcore.txt'" class="p-2 text-gray-400 hover:text-white focus:outline-none" title="Hunt IP címek" >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
             </div>
+            <button class="p-2 text-gray-400 hover:text-white focus:outline-none" 
+                    title="CloudFlare IP címek" 
+                    data-ips-url="/ips/cloudflare.txt" 
+                    onclick="showTooltip(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
         </div>
+        <div id="popper-cloudflare" class="ip-popper bg-gray-700 text-white p-4 rounded-lg shadow-lg hidden" role="tooltip"></div>
+    </div>
+
+    <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 flex-shrink-0">
+                    <img src="/images/services/gcore.webp" alt="Service Logo" class="w-full h-full object-cover rounded-full">
+                </div>
+                <div class="text-white">
+                    <h3 class="text-xl font-semibold">Gcore Netherlands</h3>
+                </div>
+            </div>
+            <button class="p-2 text-gray-400 hover:text-white focus:outline-none" 
+                    title="Gcore IP címek" 
+                    data-ips-url="/ips/gcore.txt" 
+                    onclick="showTooltip(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="popper-gcore" class="ip-popper bg-gray-700 text-white p-4 rounded-lg shadow-lg hidden" role="tooltip"></div>
+    </div>
+
+    <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 flex-shrink-0">
+                    <img src="/images/services/cs2.webp" alt="CS2 Logo" class="w-full h-full object-cover rounded-full">
+                </div>
+                <div class="text-white">
+                    <h3 class="text-xl font-semibold">CS2 Vienna</h3>
+                </div>
+            </div>
+            <button class="p-2 text-gray-400 hover:text-white focus:outline-none" 
+                    title="Valve CS2 IP címek" 
+                    data-ips-url="/ips/valve-cs2.txt" 
+                    onclick="showTooltip(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="popper-valve-cs2" class="ip-popper bg-gray-700 text-white p-4 rounded-lg shadow-lg hidden" role="tooltip"></div>
+    </div>
+
+    <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 flex-shrink-0">
+                    <img src="/images/services/tarkov.webp" alt="Tarkov Logo" class="w-full h-full object-cover rounded-full">
+                </div>
+                <div class="text-white">
+                    <h3 class="text-xl font-semibold">Escape From Tarkov</h3>
+                </div>
+            </div>
+            <button class="p-2 text-gray-400 hover:text-white focus:outline-none" 
+                    title="Tarkov IP címek" 
+                    data-ips-url="/ips/tarkov.txt" 
+                    onclick="showTooltip(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="popper-tarkov" class="ip-popper bg-gray-700 text-white p-4 rounded-lg shadow-lg hidden" role="tooltip"></div>
+    </div>
+
+    <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 flex-shrink-0">
+                    <img src="/images/services/websupport.webp" alt="Websupport Logo" class="w-full invert h-full object-cover rounded-full">
+                </div>
+                <div class="text-white">
+                    <h3 class="text-xl font-semibold">Websupport SK</h3>
+                </div>
+            </div>
+            <button class="p-2 text-gray-400 hover:text-white focus:outline-none" 
+                    title="Websupport SK IP címek" 
+                    data-ips-url="/ips/websupportsk.txt" 
+                    onclick="showTooltip(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="popper-websupportsk" class="ip-popper bg-gray-700 text-white p-4 rounded-lg shadow-lg hidden" role="tooltip"></div>
+    </div>
+
+    <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 flex-shrink-0">
+                    <img src="/images/services/hunt.webp" alt="Hunt Logo" class="w-full h-full object-cover rounded-full">
+                </div>
+                <div class="text-white">
+                    <h3 class="text-xl font-semibold">Hunt: Showdown EU</h3>
+                </div>
+            </div>
+            <button class="p-2 text-gray-400 hover:text-white focus:outline-none" 
+                    title="Hunt IP címek" 
+                    data-ips-url="/ips/hunt.txt" 
+                    onclick="showTooltip(event)">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <div id="popper-hunt" class="ip-popper bg-gray-700 text-white p-4 rounded-lg shadow-lg hidden" role="tooltip"></div>
+    </div>
+</section>
     
-        <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <div class="w-16 h-16 flex-shrink-0">
-                        <img src="/images/services/cs2.webp" alt="CS2 Logo" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <div class="text-white">
-                        <h3 class="text-xl font-semibold">CS2 Vienna</h3>
-                    </div>
-                </div>
-                <button onclick="window.location.href = '/ips/valve-cs2.txt'" class="p-2 text-gray-400 hover:text-white focus:outline-none" title="Valve CS2 IP címek">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    
-        <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <div class="w-16 h-16 flex-shrink-0">
-                        <img src="/images/services/tarkov.webp" alt="Tarkov Logo" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <div class="text-white">
-                        <h3 class="text-xl font-semibold">Escape From Tarkov</h3>
-                    </div>
-                </div>
-                <button onclick="window.location.href = '/ips/tarkov.txt'" class="p-2 text-gray-400 hover:text-white focus:outline-none" title="Tarkov IP címek">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <div class="w-16 h-16 flex-shrink-0">
-                        <img src="/images/services/websupport.webp" alt="Websupport Logo" class="w-full invert h-full object-cover rounded-full">
-                    </div>
-                    <div class="text-white">
-                        <h3 class="text-xl font-semibold">Websupport SK</h3>
-                    </div>
-                </div>
-                <button onclick="window.location.href = '/ips/websupportsk.txt'" class="p-2 text-gray-400 hover:text-white focus:outline-none" title="Websupport SK IP címek" >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <div class="bg-gray-800 p-6 text-left rounded-lg shadow-md mb-6">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <div class="w-16 h-16 flex-shrink-0">
-                        <img src="/images/services/hunt.webp" alt="Hunt Logo" class="w-full h-full object-cover rounded-full">
-                    </div>
-                    <div class="text-white">
-                        <h3 class="text-xl font-semibold">Hunt: Showdown EU</h3>
-                    </div>
-                </div>
-                <button onclick="window.location.href = '/ips/hunt.txt'" class="p-2 text-gray-400 hover:text-white focus:outline-none" title="Hunt IP címek" >
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
-
     <footer class="rounded-lg shadowbg-gray-900 m-4">
         <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
             <div class="sm:flex sm:items-center sm:justify-between">
