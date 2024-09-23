@@ -1,0 +1,200 @@
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #111827;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.pre-container {
+  --uib-size: 35px;
+  --uib-color: #e37272;
+  --uib-speed: 1s;
+  --uib-stroke: 3.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--uib-size);
+  height: calc(var(--uib-size) * 0.9);
+}
+
+.bar {
+  width: var(--uib-stroke);
+  height: 100%;
+  background-color: var(--uib-color);
+  transition: background-color 0.3s ease;
+}
+
+.bar:nth-child(1) {
+  animation: grow var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.45) infinite;
+}
+
+.bar:nth-child(2) {
+  animation: grow var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.3) infinite;
+}
+
+.bar:nth-child(3) {
+  animation: grow var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.15) infinite;
+}
+
+.bar:nth-child(4) {
+  animation: grow var(--uib-speed) ease-in-out infinite;
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    transform: scaleY(0.3);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+
+
+.animated-bg {
+    background: linear-gradient(-45deg, #3498db, #9b59b6, #3498db, #2ecc71, #c3ca5e);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+}
+
+.animated-bg-wg {
+    background: linear-gradient(-45deg, #bb8b58, #bc79c0, #9d71c9, #8776ca);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+}
+
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+
+
+:root {
+    --status-indicator-size: 15px;
+    --status-indicator-animation-duration: 2s;
+  
+    --status-indicator-color: rgb(216, 226, 233);
+    --status-indicator-color-semi: rgba(216, 226, 233, .5);
+    --status-indicator-color-transparent: rgba(216, 226, 233, 0);
+  
+    --status-indicator-color-active: rgb(0, 149, 255);
+    --status-indicator-color-active-semi: rgba(0, 149, 255, .5);
+    --status-indicator-color-active-transparent: rgba(0, 149, 255, 0);
+  
+    --status-indicator-color-positive: rgb(75, 210, 143);
+    --status-indicator-color-positive-semi: rgba(75, 210, 143, .5);
+    --status-indicator-color-positive-transparent: rgba(75, 210, 143, 0);
+  
+    --status-indicator-color-intermediary: rgb(255, 170, 0);
+    --status-indicator-color-intermediary-semi: rgba(255, 170, 0, .5);
+    --status-indicator-color-intermediary-transparent: rgba(255, 170, 0, 0);
+  
+    --status-indicator-color-negative: rgb(255, 77, 77);
+    --status-indicator-color-negative-semi: rgba(255, 77, 77, .5);
+    --status-indicator-color-negative-transparent: rgba(255, 77, 77, 0);
+  }
+  
+  @keyframes status-indicator-pulse {
+    0%   { box-shadow: 0 0 0 0 var(--status-indicator-color-semi); }
+    70%  { box-shadow: 0 0 0 var(--status-indicator-size) var(--status-indicator-color-transparent); }
+    100% { box-shadow: 0 0 0 0 var(--status-indicator-color-transparent); }
+  }
+  
+  @keyframes status-indicator-pulse-active {
+    0%   { box-shadow: 0 0 0 0 var(--status-indicator-color-active-semi); }
+    70%  { box-shadow: 0 0 0 var(--status-indicator-size) var(--status-indicator-color-active-transparent); }
+    100% { box-shadow: 0 0 0 0 var(--status-indicator-color-active-transparent); }
+  }
+  
+  @keyframes status-indicator-pulse-positive {
+    0%   { box-shadow: 0 0 0 0 var(--status-indicator-color-positive-semi); }
+    70%  { box-shadow: 0 0 0 var(--status-indicator-size) var(--status-indicator-color-positive-transparent); }
+    100% { box-shadow: 0 0 0 0 var(--status-indicator-color-positive-transparent); }
+  }
+  
+  @keyframes status-indicator-pulse-intermediary {
+    0%   { box-shadow: 0 0 0 0 var(--status-indicator-color-intermediary-semi); }
+    70%  { box-shadow: 0 0 0 var(--status-indicator-size) var(--status-indicator-color-intermediary-transparent); }
+    100% { box-shadow: 0 0 0 0 var(--status-indicator-color-intermediary-transparent); }
+  }
+  
+  @keyframes status-indicator-pulse-negative {
+    0%   { box-shadow: 0 0 0 0 var(--status-indicator-color-negative-semi); }
+    70%  { box-shadow: 0 0 0 var(--status-indicator-size) var(--status-indicator-color-negative-transparent); }
+    100% { box-shadow: 0 0 0 0 var(--status-indicator-color-negative-transparent); }
+  }
+  
+  status-indicator {
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+    width: var(--status-indicator-size);
+    height: var(--status-indicator-size);
+    background-color: var(--status-indicator-color);
+  }
+  
+  status-indicator[pulse] {
+    animation-name: status-indicator-pulse;
+      animation-duration: var(--status-indicator-animation-duration);
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-delay: 0;
+      animation-fill-mode: none;
+  }
+  
+  status-indicator[active] {
+    background-color: var(--status-indicator-color-active);
+  }
+  
+  status-indicator[active][pulse] {
+    animation-name: status-indicator-pulse-active;
+  }
+  
+  status-indicator[positive] {
+    background-color: var(--status-indicator-color-positive);
+    animation-name: status-indicator-pulse-positive;
+  }
+  
+  status-indicator[positive][pulse] {
+    animation-name: status-indicator-pulse-positive;
+  }
+  
+  status-indicator[intermediary] {
+    background-color: var(--status-indicator-color-intermediary);
+  }
+  
+  status-indicator[intermediary][pulse] {
+    animation-name: status-indicator-pulse-intermediary;
+  }
+  
+  status-indicator[negative] {
+    background-color: var(--status-indicator-color-negative);
+    animation-name: status-indicator-pulse-negative;
+  }
+  
+  status-indicator[negative][pulse] {
+    animation-name: status-indicator-pulse-negative;
+  }
