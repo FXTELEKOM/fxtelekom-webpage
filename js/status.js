@@ -72,7 +72,8 @@ function initServices() {
         { id: 'service-6', url: 'https://api.fxtelekom.org/status/hunt', updateFunction: updateServiceStatusWithPingTime },
         { id: 'service-7', url: 'https://api.fxtelekom.org/status/service/wireguard', updateFunction: updateServiceStatusWithStatus },
         { id: 'service-8', url: 'https://api.fxtelekom.org/status/service/dns/1', updateFunction: updateServiceStatusWithStatus },
-        { id: 'service-9', url: 'https://api.fxtelekom.org/status/service/dns/2', updateFunction: updateServiceStatusWithStatus }
+        { id: 'service-9', url: 'https://api.fxtelekom.org/status/service/dns/2', updateFunction: updateServiceStatusWithStatus },
+        { id: 'service-10', url: 'https://api.fxtelekom.org/status/fastly', updateFunction: updateServiceStatusWithPingTime },
     ];
 
     services.forEach(service => {
