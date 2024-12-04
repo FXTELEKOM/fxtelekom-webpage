@@ -19,10 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             ani: "https://ani.cursors-4u.net/nature/nat-11/nat1059.cur"
         },
         {
-            ani: "https://cur.cursors-4u.net/cursors/cur-9/cur805.ani",
-            png: "https://cur.cursors-4u.net/cursors/cur-9/cur805.png"
-        },
-        {
             ani: "https://cur.cursors-4u.net/toons/too-5/too403.cur"
         }
     ];
