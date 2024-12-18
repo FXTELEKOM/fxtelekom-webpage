@@ -74,7 +74,8 @@ function initServices() {
         { id: 'service-8', url: 'https://api.fxtelekom.org/status/service/dns/1', updateFunction: updateServiceStatusWithStatus },
         { id: 'service-9', url: 'https://api.fxtelekom.org/status/service/dns/2', updateFunction: updateServiceStatusWithStatus },
         { id: 'service-10', url: 'https://api.fxtelekom.org/status/fastly', updateFunction: updateServiceStatusWithPingTime },
-        { id: 'service-11', url: 'https://api.fxtelekom.org/status/github', updateFunction: updateServiceStatusWithPingTime }
+        { id: 'service-11', url: 'https://api.fxtelekom.org/status/github', updateFunction: updateServiceStatusWithPingTime },
+        { id: 'service-12', url: 'https://api.fxtelekom.org/status/gfn', updateFunction: updateServiceStatusWithPingTime }
     ];
 
     services.forEach(service => {
@@ -84,4 +85,4 @@ function initServices() {
 
 initServices();
 
-setInterval(initServices, 30000);
+setInterval(initServices, 8000);
